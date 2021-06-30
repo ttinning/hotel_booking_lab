@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:5000/api/bookings'
+const baseUrl = 'http://localhost:5000/api/bookings/'
 
 const HotelService = {
     getBookings() {
@@ -17,7 +17,7 @@ const HotelService = {
 
     deleteBooking(id) {
         return fetch(baseUrl + id, {
-            method: 'Delete'
+            method: 'DELETE'
         })
     }
 }

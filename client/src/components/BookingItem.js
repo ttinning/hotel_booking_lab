@@ -7,13 +7,13 @@ const BookingItem = ({ booking, deleteBooking}) => {
     return (
         <div>
             <h1>This is a booking</h1>
-            <h2>Guest Name: {booking.guest_name}</h2>
-            <h3>Email: {booking.email}</h3>
-            <p>Checked In: {booking.check_status}</p>
+            <h2>Guest Name: {booking.guestName}</h2>
+            <h3>Email: {booking.guestEmail}</h3>
+            <p>Checked In: {booking.checkedStatus}</p>
             <button 
             type="button"
             onClick={handleDeleteClick}
-            >
+            >Delete
             </button>
         </div>
     )

@@ -4,7 +4,7 @@ const BookingForm = ({ createBooking }) => {
 
     const [guestName, setGuestName] = useState('')
     const [guestEmail, setGuestEmail] = useState('')
-    const [checkStatus, setCheckStatus] = useState('')
+    const [checkedStatus, setCheckStatus] = useState('')
 
     const handleGuestNameChange = event => setGuestName(event.target.value)
     const handleGuestEmailChange = event => setGuestEmail(event.target.value)
@@ -15,7 +15,7 @@ const BookingForm = ({ createBooking }) => {
         const booking = {
             guestName,
             guestEmail,
-            checkStatus
+            checkedStatus
         }
         createBooking(booking)
         setGuestName('')
@@ -44,7 +44,7 @@ const BookingForm = ({ createBooking }) => {
             <label>Check-In Status: </label>
             <input
             type='text'
-            value={checkStatus}
+            value={checkedStatus}
             onChange={handleCheckStatusChange}
             required
             />
