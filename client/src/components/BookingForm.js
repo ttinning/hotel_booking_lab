@@ -4,27 +4,33 @@ const BookingForm = ({ createBooking }) => {
 
     const [guestName, setGuestName] = useState('')
     const [guestEmail, setGuestEmail] = useState('')
-    const [checkedStatus, setCheckStatus] = useState('')
+    const [arrivalDate, setArrivalDate] = useState('')
+    const [checkedStatus, setCheckStatus] = useState(false)
 
     const handleGuestNameChange = event => setGuestName(event.target.value)
     const handleGuestEmailChange = event => setGuestEmail(event.target.value)
-    const handleCheckStatusChange = event => setCheckStatus(event.target.value)
+    const handleArrivalDateChange = event => setArrivalDate(event.target.value)
+    const handleCheckStatusChange = event => setCheckStatus(event.target.checked)
 
     const handleSubmit = event => {
         event.preventDefault()
         const booking = {
             guestName,
             guestEmail,
+            arrivalDate,
             checkedStatus
         }
         createBooking(booking)
         setGuestName('')
         setGuestEmail('')
-        setCheckStatus('')
+        setArrivalDate('')
+        setCheckStatus(false)
+        document.querySelector('#form').reset()
+
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form id="form" onSubmit={handleSubmit}>
             <label>Guest Name: </label>
             <input
             type="text"
@@ -41,12 +47,19 @@ const BookingForm = ({ createBooking }) => {
             required
             />
 
+            <label>Enter Arrival Date: </label>
+            <input
+            type="date"
+            value={arrivalDate}
+            onChange={handleArrivalDateChange}
+            required
+            />
+
             <label>Check-In Status: </label>
             <input
-            type='text'
-            value={checkedStatus}
+            type='checkbox'
+            value={true}
             onChange={handleCheckStatusChange}
-            required
             />
 
             <input type="submit" value="Save"/>

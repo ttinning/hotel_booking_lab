@@ -4,7 +4,7 @@ import HotelContainer from './containers/HotelContainer';
 function App() {
   return (
     <div>
-      <h1>This is our app</h1>
+      <h1>Hotel California</h1>
       <HotelContainer/>
     </div>
   );

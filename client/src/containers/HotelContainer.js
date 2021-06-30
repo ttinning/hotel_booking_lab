@@ -26,9 +26,9 @@ const HotelContainer = () => {
 
     return (
         <>
-            <h1>Hotel Container</h1>
-            <BookingList bookings={bookings} deleteBooking={deleteBooking} />
+            <h1>Bookings</h1>
             <BookingForm createBooking={createBooking}/>
+            <BookingList bookings={bookings} deleteBooking={deleteBooking} />
         </>
     )
 }

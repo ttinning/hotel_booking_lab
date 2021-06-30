@@ -4,7 +4,6 @@ const BookingList = ({bookings, deleteBooking}) => {
 
     return (
         <div>
-            <h1>This is the booking</h1>
             {bookings.map(booking => {
                 return (
                     <BookingItem 

@@ -6,10 +6,10 @@ const BookingItem = ({ booking, deleteBooking}) => {
 
     return (
         <div>
-            <h1>This is a booking</h1>
             <h2>Guest Name: {booking.guestName}</h2>
             <h3>Email: {booking.guestEmail}</h3>
-            <p>Checked In: {booking.checkedStatus}</p>
+            <h4>Arrival Date: {booking.arrivalDate}</h4>
+            <p>Checked In: {booking.checkedStatus.toString()}</p>
             <button 
             type="button"
             onClick={handleDeleteClick}
