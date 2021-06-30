@@ -16,7 +16,7 @@ const HotelContainer = () => {
 
     const createBooking = newBooking => {
         HotelService.postBooking(newBooking)
-        .then(savedBooking => setBookings([...bookings, savedBooking]))
+        .then(savedBooking => (setBookings([...bookings, savedBooking]), setFilteredBookings([...bookings, savedBooking])))
     }
 
     const deleteBooking = idToDelete => {
