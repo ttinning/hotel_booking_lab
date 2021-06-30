@@ -1,6 +1,6 @@
 import BookingItem from "./BookingItem";
 
-const BookingList = ({bookings, deleteBooking}) => {
+const BookingList = ({bookings, deleteBooking, updateBooking}) => {
 
     return (
         <div>
@@ -10,6 +10,7 @@ const BookingList = ({bookings, deleteBooking}) => {
                     key={booking._id} 
                     booking={booking}
                     deleteBooking={deleteBooking}
+                    updateBooking={updateBooking}
                     />
                 )
             })}

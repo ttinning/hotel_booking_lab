@@ -26,6 +26,11 @@ const HotelContainer = () => {
         })
     }
 
+    const updateBooking = (idToUpdate, updateBooking)=> {
+        HotelService.updateBooking(idToUpdate, updateBooking)
+        .then(savedBooking => (setBookings([...bookings, savedBooking]), setFilteredBookings([...bookings, savedBooking])))  
+    }
+
     const filter = (searchTerm) => {
         const prepareSearch = searchTerm.toLowerCase()
         const filteredBookings = bookings.filter((booking) => {
@@ -46,7 +51,7 @@ const HotelContainer = () => {
             <h1>Bookings</h1>
             <BookingForm createBooking={createBooking}/>
             <BookingFilter filter={filter} filterDate={filterDate}/>
-            <BookingList bookings={filteredBookings} deleteBooking={deleteBooking} />
+            <BookingList bookings={filteredBookings} deleteBooking={deleteBooking} updateBooking={updateBooking}/>
         </>
     )
 }
