@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import HotelService from '../services/HotelService';
 import BookingList from '../components/BookingList';
+import BookingForm from '../components/BookingForm';
 
 const HotelContainer = () => {
 
@@ -27,6 +28,7 @@ const HotelContainer = () => {
         <>
             <h1>Hotel Container</h1>
             <BookingList bookings={bookings} deleteBooking={deleteBooking} />
+            <BookingForm createBooking={createBooking}/>
         </>
     )
 }
